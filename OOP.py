@@ -206,7 +206,7 @@ emp_1 + emp_2
 # **Property** decorators - Getters, Setters, Deleters  
 # After you initialize an employee and change later the name, the email adress will not be altered corretly. One way would be to change it aswell manually but there is an other way.
 
-# `@property` makes an method to attribute, so you don't have to use `...()` at the end of the method
+# `@property` makes an method to attribute, so you don't have to use `..()` at the end of the method
 
 # With a `@X.setter` you can change the attributes aswell
 
