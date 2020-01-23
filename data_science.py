@@ -171,6 +171,9 @@ df.loc[df['column_name'].isin(some_values)]
 df = df.drop(["ColumnA", "ColumnB"], axis=1)
 
 df = df[["ColumnsToKeep", "ThisOneToo"]]
+ 
+# remove dublicated, only keep one of them             
+all_tables = all_tables.loc[:,~all_tables.columns.duplicated()]
 
 #### Drop row
 
