@@ -100,6 +100,19 @@ pd.to_excel("file.xlsx")
 
 df = pd.read_pickle("file.pkl")
 pd.to_pickle("file.pkl")
+             
+def timestamp():
+    time = f"{datetime.datetime.now().date()}--{datetime.datetime.now().time().replace(microsecond=0)}"
+    return time.replace(":", "-")
+             
+with open("all_players.txt", "w") as f:
+    for player in all_players:
+             f.write(player +"\n")
+             
+all_teams = []
+with open("all_teams.txt", "r") as f:
+    for line in f:
+        all_teams.append((line.strip()))
 
 #### Merging and Appending
 
