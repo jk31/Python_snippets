@@ -135,6 +135,7 @@ df.info()
 df.info(verbose=True)
 
 df.dtypes
+df.astype({'col1': 'int32'}).dtypes
 
 df.columns
 
