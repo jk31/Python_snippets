@@ -94,6 +94,8 @@ df = pd.read_csv("file.csv")
 pd.to_csv("file.csv", index=False)
 
 df = pd.read_stata("file.dta")
+labels = pd.io.stata.StataReader(r"C:\Users\XXX.dta").variable_labels()
+df.to_stata(r"C:\Users\XXX.dta", variable_labels = labels)
 
 df = pd.read_excel('file.xlsx', index_col=None, header=0) 
 pd.to_excel("file.xlsx")
