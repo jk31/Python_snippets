@@ -395,6 +395,12 @@ re.findall(r"[\d]+", text)
 df["ColumnB"].str.contains("(ird)", regex=True)
 
 df = df[df.desc.str.len() < 1000]
+             
+# split column             
+df1["A"], df1["B"] = df1["Apps"].str.split("XXX").str
+             
+# string replace
+df1["B"] = df1["B"].str.replace(")", "")
 
 ## OS
 
