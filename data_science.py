@@ -421,11 +421,10 @@ with ZipFile("data-filtered.zip", "r") as zip:
              
 # usefull
 import datetime            
-date_of_birth = datetime.datetime.strptime("28-01-1993", "%d-%m-%Y")
 def calculate_age(born):
+    born = datetime.datetime.strptime(born, "%d-%m-%Y")
     today = datetime.date.today()
     return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
-calculate_age(date_of_birth)
     
 ## SQL
 import sqlite3
