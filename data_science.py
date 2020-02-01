@@ -123,6 +123,8 @@ pd.merge(df1, df2, on='Customer_id', how='inner')
 # will remove observations that are not in intersection
 df = df.merge(df2, left_on='HomeTeam', right_on='Team')
 
+result = pd.merge(a, b[["Team", "Season", "Rank", "GD"]], how="left", on=["Team", "Season"])
+
 ### Overview
 
 df.shape
