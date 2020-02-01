@@ -402,6 +402,8 @@ df1["A"], df1["B"] = df1["Apps"].str.split("XXX").str
 # string replace
 df1["B"] = df1["B"].str.replace(")", "")
 
+             
+df["Nationality"] = df["Nationality"].apply(lambda x: re.search(r"(\w+)$", x).group() if re.search(r"(\w+)$", x) != None else "Unkown")
 ## OS
 
 import os
