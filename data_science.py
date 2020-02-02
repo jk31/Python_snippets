@@ -297,7 +297,8 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 %matplotlib inline
 plt.style.use('seaborn-whitegrid')
-
+# https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Python_Seaborn_Cheat_Sheet.pdf
+             
 import seaborn as sns
 
 ### General Plotting
