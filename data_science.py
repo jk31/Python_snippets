@@ -6,6 +6,9 @@ import numpy as np
 import pandas as pd
 pd.options.display.max_colwidth = 100
 
+from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = "all"
+
 import pandas_profiling
 
 import re
