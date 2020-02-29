@@ -7,12 +7,15 @@ apm install atom-ide-ui
 apm install ide-python
 ```
 
-* script (little broken with envs)
 * python-autopep8
   * and set *On safe*
 * platformio-ide-terminal
   * Path to `C:\Program Files\Git\git-cmd.exe`
 * kite
+* pytools
+* minimap
+* goto-definition
+* hydrogen
 
 
 ## config.cson
@@ -25,11 +28,24 @@ apm install ide-python
   "atom-ide-ui":
     "atom-ide-code-format":
       formatOnSave: true
-    "atom-ide-diagnostics-ui": {}
+    "atom-ide-diagnostics-ui":
+      showDiagnosticTraces: true
+      showDirectoryColumn: true
+    "atom-ide-outline-view":
+      nameOnly: true
     "atom-ide-terminal": {}
     use:
+      "atom-ide-busy-signal": "always"
+      "atom-ide-code-actions": "always"
+      "atom-ide-code-format": "always"
       "atom-ide-code-highlight": "always"
+      "atom-ide-debugger": "always"
+      "atom-ide-definitions": "always"
+      "atom-ide-diagnostics": "always"
+      "atom-ide-diagnostics-ui": "always"
+      "atom-ide-signature-help": "always"
       "atom-ide-terminal": "always"
+      hyperclick: "always"
   "autocomplete-plus":
     enableBuiltinProvider: false
   "autocomplete-python":
@@ -41,15 +57,12 @@ apm install ide-python
       "script"
       "spell-check"
       "autocomplete-snippets"
+      "python-autopep8"
     ]
     telemetryConsent: "no"
-    themes: [
-      "one-dark-ui"
-      "monokai"
-    ]
+    uriHandlerRegistration: "always"
     useTreeSitterParsers: false
   editor:
-    fontSize: 16
     preferredLineLength: 100
     scrollPastEnd: true
     softWrap: true
@@ -57,41 +70,47 @@ apm install ide-python
     tabLength: 4
   "exception-reporting":
     userId: "d730117e-ca34-481c-8a17-d7e878af5d9d"
+  fonts:
+    fontFamily: "Hack"
   "ide-python":
     pylsPlugins:
+      autopep8: {}
       flake8: {}
-      jedi_completion:
-        enabled: false
-        include_params: false
+      jedi_completion: {}
       jedi_definition:
-        enabled: false
+        follow_builtin_imports: true
+        follow_imports: true
       jedi_hover: {}
       jedi_references: {}
-      jedi_signature_help:
-        enabled: false
-      jedi_symbols:
-        all_scopes: false
-        enabled: false
+      jedi_signature_help: {}
+      jedi_symbols: {}
       mccabe: {}
-      preload:
-        enabled: false
+      preload: {}
       pycodestyle:
         enabled: false
       pyflakes: {}
       pylint: {}
-      rope_completion: {}
+      rope_completion:
+        enabled: true
+      yapf:
+        enabled: true
   kite:
     showWelcomeNotificationOnStartup: false
+  minimap:
+    adjustAbsoluteModeHeight: true
   "platformio-ide-terminal":
     core:
       shell: "C:\\Program Files\\Git\\git-cmd.exe"
     style:
-      fontSize: "12"
+      fontSize: "14"
       theme: "homebrew"
   "python-autopep8":
     formatOnSave: true
   welcome:
     showOnStartup: false
+  "wrap-guide":
+    enabled: false
+
 
 ```
 
