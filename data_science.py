@@ -58,6 +58,9 @@ data = [
     ['2015-06-09', 38],
     ['2015-06-10', 41]
 ]
+
+data = pd.concat([a, b, c, d, e, f], axis=1)
+data.columns = ["All", "Choice", "Random-Videos", "Random-Comments", "Previous-Videos", "Previous-Comments"]
  
 df = pd.DataFrame(data, columns=['date', 'price'])
 
@@ -145,6 +148,7 @@ df.astype({'col1': 'int32'}).dtypes
 df.columns
 
 df["y"].value_counts()
+df["y"].value_counts().sort_index()
 
 df["ColumnC"].unique().tolist()
 
