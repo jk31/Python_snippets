@@ -155,6 +155,7 @@ df["ColumnC"].unique().tolist()
 df_full.columns.difference(df.columns)
 
 df.describe()
+pd.crosstab(df["Subtype"], df["Type"])
 
 profile = df.profile_report(
         
@@ -191,7 +192,8 @@ df.loc[df['column_name'].isin(some_values)]
 
 ### Edit DataFrame
 
-#### Drop or keep column
+#### 
+             or keep column
 
 df = df.drop(["ColumnA", "ColumnB"], axis=1)
 
@@ -211,6 +213,9 @@ df.isna().sum()
 df = df.dropna()
 # removes columns             
 df.dropna(axis="columns")
+ 
+# show NaN rows
+df[df.isnull().any(axis=1)]
 
 #### Drop if not enough
 
@@ -244,6 +249,8 @@ df["SomeNewColumn"] = df.["y"].apply(lambda x: "Oki" if x == 1 else "Not")
 df["SomeColumn"] = df.apply(lambda x: 1 if x["y"] == 1 else 0, axis=1)
 
 df = df["y"].replace(1, 2)
+
+.maps(dict)
              
             
 df["tokeep"] = df.apply(lambda x: 1 if x["HomeTeam"] in df2["Team"].tolist() else 0, axis=1)
