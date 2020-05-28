@@ -69,7 +69,8 @@ df = pd.DataFrame(data, columns=['date', 'price'])
 name_list = [fake.name() for _ in range(100)
 
 [x for x in df_group.columns if df_group[x].var() > 1 ]
-
+[x+1 if x >= 45 else x+5 for x in l]
+             
 a = [1, 2, 3]
 def mul(arg):
     return arg*2
