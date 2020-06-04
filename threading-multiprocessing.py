@@ -1,3 +1,6 @@
+
+######## THREADING
+
 import threading
 import time
 
@@ -54,5 +57,51 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
 with concurrent.futures.ThreadPoolExecutor() as executor:
   executor.map(download_function, urls)
   
+########## MULTIPROCESSING
+
+import time
+import multiprocessing
+
+start = time.perf_counter()
+
+def do_something(seconds=2):
+  print("sleep ")
+  time.sleep(seconds)
+  return f"Done {seconds}"
+
+p1 = multiprocessing.Process(target=do_something)
+p2 = multiprocessing.Process(target=do_something)
+
+p1.start()
+p2.start()
+
+p1.join()
+p2.join()
+
+####
+
+processes = []
+for _ in range(10):
+  p = multiprocessing.Process(target=do_something, args=[3])
+  p.start()
+  processes.append(p)
+  
+for process in processes:
+  process.join()
+
+finish = time.perf_counter()
 
 
+###
+
+import concurrent.futures
+
+with concurrent.futures.ProcessPoolExecutor() as executor:
+  results = [executor.submit(do_something, 1) for _ in range(10)]
+  
+  for f in concurrent.futures.as_completed(results):
+    print(f.result())
+    
+    
+secs = [5, 4, 3, 2, 1]
+results = executor.map(do_something, secs)
