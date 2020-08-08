@@ -4,6 +4,7 @@
 
 import numpy as np
 import pandas as pd
+# https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf
 pd.options.display.max_colwidth = 100
 
 from IPython.core.interactiveshell import InteractiveShell
