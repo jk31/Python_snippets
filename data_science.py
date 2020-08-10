@@ -19,6 +19,7 @@ import requests
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 %matplotlib inline
+https://github.com/matplotlib/cheatsheets
 
 ## Wrangling
 
